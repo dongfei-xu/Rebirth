@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+            location="D:\Config\mvnConfig\repository\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
+
+    <context id="context1" targetRuntime="MyBatis3" defaultModelType="flat">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
+                        password="root"/>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--普通java bean-->
+        <javaModelGenerator targetPackage="com.hk.rebirth.pojo"
+                            targetProject="src/main/java"/>
+        <!--映射 xml-->
+        <sqlMapGenerator targetPackage="mapping"
+                         targetProject="src/main/resources"/>
+
+        <!-- 生成xml文件 -->
+        <!--<javaClientGenerator targetPackage="com.huifu.bifrostbase.dal.mapper" targetProject="src/main/java" type="XMLMAPPER"/>-->
+
+        <!-- 生成annotated -->
+        <!--<javaClientGenerator targetPackage="com.huifu.bifrostbase.dal.mapper" targetProject="src/main/java" type="ANNOTATEDMAPPER"/>-->
+
+        <!-- XML和注解的混合形式，(上面这种情况中的)SqlProvider注解方法会被XML替代-->
+        <!--java mapping 类-->
+        <javaClientGenerator targetPackage="com.hk.rebirth.dao" targetProject="src/main/java" type="MIXEDMAPPER"/>
+
+        <!--
+        <table tableName="LOANS_INFO" domainObjectName="LoansInfo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="ACCOUNT_INFO" domainObjectName="AccountInfo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="CUST_DATA" domainObjectName="CustData" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="CUST_DATA_CHECK" domainObjectName="CustDataCheck" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="RE_PAYMENT_DETAIL" domainObjectName="RePaymentDetail" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="BUSSINESS_PROC" domainObjectName="BussinessProc" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="ORG_INFO" domainObjectName="OrgInfo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        -->
+        <table tableName="TEST" domainObjectName="TestDto" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+    </context>
+</generatorConfiguration>
