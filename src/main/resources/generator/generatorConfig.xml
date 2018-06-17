@@ -2,15 +2,19 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-    <classPathEntry
-            location="D:\Config\mvnConfig\repository\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
+    <!-- 公司地址 -->
+    <!--<classPathEntry-->
+            <!--location="D:\Config\mvnConfig\repository\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>-->
 
+    <!-- 家庭地址 -->
+    <classPathEntry
+            location="D:\mavenloc\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
     <context id="context1" targetRuntime="MyBatis3" defaultModelType="flat">
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
+                        connectionURL="jdbc:mysql://localhost:3306/rebirth" userId="root"
                         password="root"/>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -41,6 +45,6 @@
         <table tableName="BUSSINESS_PROC" domainObjectName="BussinessProc" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
         <table tableName="ORG_INFO" domainObjectName="OrgInfo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
         -->
-        <table tableName="TEST" domainObjectName="TestDto" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="UserInfo" domainObjectName="UserInfoPo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
     </context>
 </generatorConfiguration>

@@ -1,6 +1,6 @@
 package com.hk.rebirth.controller;
 
-import com.hk.rebirth.service.impl.TestServiceImpl;
+import com.hk.rebirth.service.IUserInfoService;
 import com.hk.rebirth.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -22,7 +21,7 @@ import java.util.List;
 public class TestController {
 
     @Autowired
-    private TestServiceImpl testServiceImpl;
+    private IUserInfoService userInfoService;
 
     @Autowired
     private RedisUtil redisUtil;
@@ -34,7 +33,7 @@ public class TestController {
     @RequestMapping(value = {"/init"},produces = {"application/json;charset=UTF-8"},method = RequestMethod.GET)
     @ResponseBody
     public List getAllUsers(){
-        List list =  testServiceImpl.select();
+        List list =  userInfoService.select();
         return list;
     }
 
