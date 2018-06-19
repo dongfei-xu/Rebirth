@@ -1,5 +1,6 @@
 package com.hk.rebirth.controller;
 
+import com.hk.rebirth.redis.core.ISequence;
 import com.hk.rebirth.service.IUserInfoService;
 import com.hk.rebirth.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class TestController {
 
     @Autowired
     private CacheManager cacheManager;
+
+    @Autowired
+    private ISequence iSequence;
 
 
     @RequestMapping(value = {"/init"},produces = {"application/json;charset=UTF-8"},method = RequestMethod.GET)
@@ -69,6 +73,12 @@ public class TestController {
     public String delete(){
         redisUtil.remove("key");
         return "ok";
+    }
+
+    @RequestMapping(value = "/sequence",method = RequestMethod.GET)
+    @ResponseBody
+    public String sequence(){
+        return iSequence.universalSequence();
     }
 
 }
