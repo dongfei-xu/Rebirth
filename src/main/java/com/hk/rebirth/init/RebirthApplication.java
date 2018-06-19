@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 
 @SpringBootApplication
 @MapperScan("com.hk.rebirth.dao")
-@ComponentScan(basePackages = {"com.*"})
+@ComponentScan(basePackages = {"com.hk.*"})
 public class RebirthApplication {
 
 	public static void main(String[] args) {
