@@ -1,11 +1,13 @@
 package com.hk.rebirth.controller;
 
+import com.hk.rebirth.pojo.UserInfoPo;
 import com.hk.rebirth.redis.core.ISequence;
 import com.hk.rebirth.service.IUserInfoService;
 import com.hk.rebirth.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -39,6 +41,19 @@ public class TestController {
     public List getAllUsers(){
         List list =  userInfoService.select();
         return list;
+    }
+
+    @RequestMapping(value = {"/insert"},produces = {"application/json;charset=UTF-8"},method = RequestMethod.POST)
+    @ResponseBody
+    @Transactional
+    public String insert(){
+        UserInfoPo userInfoPo = new UserInfoPo();
+        userInfoPo.setUserName("事物测试");
+        UserInfoPo userInfoPo1 = new UserInfoPo();
+        userInfoPo1.setUserName("事物测试1");
+        int m = userInfoService.insert(userInfoPo1);
+        int i = userInfoService.insertSelective(userInfoPo);
+        return "i = "+ i +",m = " + m;
     }
 
     @RequestMapping(value = {"/str"},method = RequestMethod.GET)

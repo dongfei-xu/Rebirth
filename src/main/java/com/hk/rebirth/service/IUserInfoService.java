@@ -8,6 +8,8 @@ public interface IUserInfoService {
 
     int insertSelective(UserInfoPo userInfoPo);
 
+    int insert(UserInfoPo userInfoPo);
+
     int updateSelective(UserInfoPo userInfoPo, String userInfoSequence);
 
     int updateSelective(UserInfoPo userInfoPo, String userInfoSequence, List<String> start);

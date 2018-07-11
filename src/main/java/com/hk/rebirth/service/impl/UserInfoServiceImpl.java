@@ -6,6 +6,7 @@ import com.hk.rebirth.pojo.UserInfoPoExample;
 import com.hk.rebirth.service.IUserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,8 +17,21 @@ public class UserInfoServiceImpl implements IUserInfoService {
     private UserInfoPoMapper userInfoPoMapper;
 
     @Override
+    @Transactional
     public int insertSelective(UserInfoPo userInfoPo) {
-        return userInfoPoMapper.insertSelective(userInfoPo);
+        int i = userInfoPoMapper.insertSelective(userInfoPo);
+
+        if(true){
+            throw new RuntimeException("insert 抛异常了");
+        }
+        return i;
+    }
+
+    @Override
+    @Transactional
+    public int insert(UserInfoPo userInfoPo) {
+        int i = userInfoPoMapper.insertSelective(userInfoPo);
+        return i;
     }
 
     @Override
