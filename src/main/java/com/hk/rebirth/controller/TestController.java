@@ -1,18 +1,25 @@
 package com.hk.rebirth.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.hk.rebirth.core.Show;
 import com.hk.rebirth.pojo.UserInfoPo;
 import com.hk.rebirth.redis.core.ISequence;
 import com.hk.rebirth.service.IUserInfoService;
 import com.hk.rebirth.util.RedisUtil;
+import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -35,12 +42,22 @@ public class TestController {
     @Autowired
     private ISequence iSequence;
 
+    @Autowired
+    private Show show;
+
 
     @RequestMapping(value = {"/init"},produces = {"application/json;charset=UTF-8"},method = RequestMethod.GET)
     @ResponseBody
     public List getAllUsers(){
         List list =  userInfoService.select();
         return list;
+    }
+
+    @RequestMapping(value = {"/test"},produces = {"application/json;charset=UTF-8"},method = RequestMethod.GET)
+//    @ResponseBody
+    public ModelAndView test(){
+        List list =  userInfoService.select();
+        return new ModelAndView("test");
     }
 
     @RequestMapping(value = {"/insert"},produces = {"application/json;charset=UTF-8"},method = RequestMethod.POST)
@@ -58,8 +75,23 @@ public class TestController {
 
     @RequestMapping(value = {"/str"},method = RequestMethod.GET)
 //    @ResponseBody
-    public ModelAndView init(){
-        return new ModelAndView("index");
+    public String init(Model model, Object obj){
+//        return new ModelAndView("index");
+
+        show.test();
+        if(true) {
+            model.addAttribute("model",obj);
+            return "redirect:/test/ok";
+        }else{
+            return "";
+        }
+    }
+
+    @RequestMapping(value = {"/ok"},method = RequestMethod.GET)
+    public ModelAndView ok(){
+//        System.out.println(request);
+//        System.out.println(test);
+        return new ModelAndView("ok");
     }
 
     @RequestMapping(value = "/redis",method = RequestMethod.GET)

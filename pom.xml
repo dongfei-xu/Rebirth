@@ -26,6 +26,7 @@
 		<jackson-databind.version>2.8.11</jackson-databind.version>
 		<tomcat.version>7.0.79</tomcat.version>
 		<spring-boot.version>1.5.11.RELEASE</spring-boot.version>
+		<httpclient.version>4.5.3</httpclient.version>
 		<!--<slf4j.version>1.6.6</slf4j.version>-->
 		<log4j.version>1.2.12</log4j.version>
 	</properties>
@@ -82,7 +83,23 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.4</version>
 		</dependency>
-
+		<!--httpClient-->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+		<!--fastJson-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.35</version>
+		</dependency>
 		<!--spring boot 访问jsp依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

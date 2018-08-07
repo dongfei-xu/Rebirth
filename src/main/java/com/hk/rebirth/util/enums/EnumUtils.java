@@ -1,5 +1,6 @@
 package com.hk.rebirth.util.enums;
 
+import lombok.val;
 import org.apache.commons.lang3.StringUtils;
 
 public class EnumUtils {
@@ -10,7 +11,6 @@ public class EnumUtils {
      * @return
      */
     public static Boolean isContains(String code){
-        RebirthStatusEnum.FAIL.getMsg();
         RebirthStatusEnum[] values = RebirthStatusEnum.values();
         for(RebirthStatusEnum value :values){
             if(StringUtils.equals(code, value.getCode())){
@@ -19,4 +19,5 @@ public class EnumUtils {
         }
         return false;
     }
+
 }
