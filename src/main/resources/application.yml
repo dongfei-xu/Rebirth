@@ -18,16 +18,22 @@ spring:
           suffix: .jsp
 
 # redis
-    redis:
-          host: 127.0.0.1
-          port: 6379
-          database: 0
-          password:
-          pool:
-              max-active: 8
-              max-wait: 1
-              min-idle: 0
-          timeout: 0
+#    redis:
+#          host: 127.0.0.1
+#          port: 6379
+#          database: 0
+#          password:
+#          pool:
+#              max-active: 8
+#              max-wait: 1
+#              min-idle: 0
+#          timeout: 0
+redis:
+ jedispool:
+    host: r-uf61f59b12ebc944.redis.rds.aliyuncs.com
+    port: 6379
+    timeout: 3000
+    password: Chinapnr201
 
 
 #  mybatis 映射

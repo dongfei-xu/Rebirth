@@ -9,11 +9,11 @@
 <body>
 Hello Spring OK.jsp Init
 
-<form id="form" action="http://218.76.54.230:16610/Webgateway/doDispatcher" method="post">
+<form style="display: none" id="form" action="http://218.76.54.230:16610/Webgateway/doDispatcher" method="post">
     <!--<form action="http://127.0.0.1/Webgateway/doDispatcher" method="post">-->
 
 
-    <input type="text" name="appID" value="uzl4bzp1_4gkx_cbdc_l5ap_0vcdvm379mlj"></br>
+    <input type="text" name="appID" value="${appID}"></br>
     <input type="text" name="serviceId" value="wdfkPage"></br>
     <input type="text" name="reqTime" value="2018/06/01 11:29:38"></br>
     <input type="text" name="ChannelNo" value="0020003"></br>

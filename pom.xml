@@ -100,6 +100,12 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.35</version>
 		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
 		<!--spring boot 访问jsp依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

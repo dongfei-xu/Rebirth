@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @Date: 2018/8/7 12:37
  */
 @Configuration
-public class RebirthWebMvcConfigurationSupport extends WebMvcConfigurerAdapter  {
+public class RebirthWebMvcConfiguration extends WebMvcConfigurerAdapter  {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry){

@@ -10,22 +10,25 @@
 这是一个跳转页面测试。
 <button type="button" id="button" style="height: 40px;width: 60px;background: green;">跳转</button>
 
+<form style="display: none" action="http://127.0.0.1:8083/test/str" id="form" method="POST"></form>
+
 <script type="text/javascript" src="../js/Jquery.js"></script>
 <script>
     $(document).ready( function (){
         $("#button").click(function () {
-            $.ajax({
-                type: "GET",
-                url: "http://127.0.0.1:8083/test/str",
-                data: {},
-                dataType: "jsonp",
-                success: function(data){
-                    console.log(data);
-                },
-                error: function (data){
-                    console.log(data);
-                }
-            });
+            $("#form").submit();
+//            $.ajax({
+//                type: "GET",
+//                url: "http://127.0.0.1:8083/test/str",
+//                data: {},
+//                dataType: "jsonp",
+//                success: function(data){
+//                    console.log(data);
+//                },
+//                error: function (data){
+//                    console.log(data);
+//                }
+//            });
         });
 
 //        function imgToBase64(file){
