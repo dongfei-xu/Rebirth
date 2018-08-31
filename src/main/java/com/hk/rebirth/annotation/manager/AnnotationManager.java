@@ -59,7 +59,7 @@ public class AnnotationManager {
                     Decrypt decryptType = key.getAnnotation(Decrypt.class);
                     if(null == decryptType){
                         continue;
-                    }else if(StringUtils.equals(decryptType.decryptType(), "MD5")){
+                    }else if(StringUtils.equals(decryptType.Type(), "MD5")){
                         if(beanValue instanceof String && StringUtils.isNotBlank( (String) beanValue)){
                             // TODO
                             // 处理逻辑
@@ -67,9 +67,9 @@ public class AnnotationManager {
                             AnnotationManager.setBeanValue(obj, setMethodStr, beanValue);
                         }
 
-                    }else if(StringUtils.equals(decryptType.decryptType(), "3DS")){
-
-                    }else if(StringUtils.equals(decryptType.decryptType(), "SHA-256")){
+                    }else if(StringUtils.equals(decryptType.Type(), "3DS")){
+System.exit(1);
+                    }else if(StringUtils.equals(decryptType.Type(), "SHA-256")){
 
                     }else{
                         logger.error("不存在的加密类型");

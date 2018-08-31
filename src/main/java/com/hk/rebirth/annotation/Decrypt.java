@@ -26,6 +26,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 public @interface Decrypt {
-    String decryptType() default "MD5";     // 加解密方式 MD5 3DS SHA-256
-    String decryptMsg() default "";
+    String Type() default "MD5";     // 加解密方式 MD5 3DS SHA-256
+    String Msg() default "";
 }
