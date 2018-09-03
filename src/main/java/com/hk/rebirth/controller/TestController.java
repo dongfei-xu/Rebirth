@@ -21,10 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @Author:dongfei.xu
@@ -141,6 +140,24 @@ public class TestController {
             result.put("respBody", object);
         }
         return result;
+    }
+
+    private String lastDate(String strDate, int amount){
+        Calendar c = Calendar.getInstance();
+        Date date = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        try {
+            date = sdf.parse(strDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        //过去一月
+        c.setTime(date);
+        c.add(Calendar.MONTH, amount);
+        Date m = c.getTime();
+
+        return null;
     }
 
     public static void main(String[] args){
