@@ -57,7 +57,7 @@ public class TestController {
     }
 
     @RequestMapping(value = {"/test"},produces = {"application/json;charset=UTF-8"},method = RequestMethod.GET)
-//    @ResponseBody
+    @ResponseBody
     public ModelAndView test(){
         return new ModelAndView("test");
     }
