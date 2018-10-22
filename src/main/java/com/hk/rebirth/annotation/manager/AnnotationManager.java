@@ -3,6 +3,7 @@ package com.hk.rebirth.annotation.manager;
 import com.alibaba.fastjson.JSON;
 import com.hk.rebirth.annotation.Decrypt;
 import com.hk.rebirth.util.exception.RebirthException;
+import lombok.extern.slf4j.XSlf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -6,6 +6,7 @@ import com.hk.rebirth.pojo.UserInfoPo;
 import com.hk.rebirth.redis.core.ISequence;
 import com.hk.rebirth.service.IUserInfoService;
 import com.hk.rebirth.util.RedisUtil;
+import com.hk.rebirth.util.exception.MyException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,11 @@ public class TestController {
     public ModelAndView ok(){
 //        System.out.println(request);
 //        System.out.println(test);
+//        try {
+//            throw new MyException();
+//        }catch (MyException e){
+//
+//        }
         return new ModelAndView("ok");
     }
 

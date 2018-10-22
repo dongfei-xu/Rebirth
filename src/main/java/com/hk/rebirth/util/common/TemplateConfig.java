@@ -36,7 +36,7 @@ public class TemplateConfig {
                 template.put(key, prop.getProperty(key));
             }
         } catch (Exception e){
-
+            e.printStackTrace();
         } finally {
             if(null == inputStream){
                 try {

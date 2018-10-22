@@ -8,7 +8,7 @@
 
     <!-- 家庭地址 -->
     <classPathEntry
-            location="D:\mavenloc\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
+            location="C:\Users\dongfei.xu\.m2\repository\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar"/>
     <context id="context1" targetRuntime="MyBatis3" defaultModelType="flat">
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
@@ -45,6 +45,6 @@
         <table tableName="BUSSINESS_PROC" domainObjectName="BussinessProc" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
         <table tableName="ORG_INFO" domainObjectName="OrgInfo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
         -->
-        <table tableName="UserInfo" domainObjectName="UserInfoPo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="re_user_info" domainObjectName="ReUserInfoDo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
     </context>
 </generatorConfiguration>
