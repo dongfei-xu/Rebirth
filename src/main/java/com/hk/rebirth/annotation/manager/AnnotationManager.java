@@ -38,6 +38,7 @@ public class AnnotationManager {
                 list.add(field);
             }
         }
+        StringUtils.leftPad("111", 5, "0");
         return list;
     }
 
@@ -69,7 +70,7 @@ public class AnnotationManager {
                         }
 
                     }else if(StringUtils.equals(decryptType.Type(), "3DS")){
-System.exit(1);
+//System.exit(1);
                     }else if(StringUtils.equals(decryptType.Type(), "SHA-256")){
 
                     }else{

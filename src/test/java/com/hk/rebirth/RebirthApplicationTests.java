@@ -30,6 +30,14 @@ public class RebirthApplicationTests {
 //		throw new NullPointerException();
 //	}
 
+//	-server  Server 模式才能进行逃逸分析
+//-Xmx10m	 堆最大内存10m
+//-Xms10m    堆初始空间10m
+//-XX:+PrintGC	打印GC日志
+//-XX:+DoEscapeAnalysis		开启逃逸分析
+//-XX:-UseTLAB	关闭TLAB
+//-XX:+EliminateAllocations 开启标量替换
+
 	@Test
 	public void throwable() {
 		try{
@@ -52,6 +60,14 @@ public class RebirthApplicationTests {
 
 	@Test
 	public void system(){
+		String s;
+		System.out.println(System.currentTimeMillis());
+		for(int i=0; i< 100; i++){
+			s = new String("111");
+		}
+		System.out.println(System.currentTimeMillis());
+
+		System.out.println(System.currentTimeMillis());
 //		System;
 	}
 
